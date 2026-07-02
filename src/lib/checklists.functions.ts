@@ -108,13 +108,9 @@ export const updateChecklistItem = createServerFn({ method: "POST" })
     z.object({ id: z.string().uuid(), text: z.string().min(1).max(500).optional(), completed: z.boolean().optional() }).parse(data)
   )
   .handler(async ({ context, data }) => {
-    const update: Record<string, unknown> = {};
-    if (data.text !== undefined) update.text = data.text;
-    if (data.completed !== undefined) update.completed = data.completed;
-
     const { error } = await context.supabase
       .from("checklist_items")
-      .update(update)
+      .update({ text: data.text, completed: data.completed })
       .eq("id", data.id);
 
     if (error) throw error;
