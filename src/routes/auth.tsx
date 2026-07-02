@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckboxIcon, Loader2 } from "lucide-react";
+import { CheckSquare, Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
@@ -78,7 +78,7 @@ function AuthPage() {
     <div className="flex min-h-screen items-center justify-center bg-muted/30 px-4">
       <div className="w-full max-w-md">
         <div className="mb-8 flex items-center justify-center gap-2">
-          <CheckboxIcon className="h-8 w-8 text-primary" />
+          <CheckSquare className="h-8 w-8 text-primary" />
           <span className="text-2xl font-bold tracking-tight">Checklists</span>
         </div>
 
