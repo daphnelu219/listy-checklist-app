@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ArrowLeft, Plus, Trash2 } from "lucide-react";
+import { ArrowLeft, Plus, Trash2, Check } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/checklists/$id")({
@@ -101,19 +101,37 @@ function ChecklistDetailPage() {
                   key={item.id}
                   className="flex items-center gap-3 rounded-md border bg-background px-4 py-3"
                 >
-                  <Checkbox
-                    checked={item.completed}
-                    onCheckedChange={(checked) =>
-                      toggleMutation.mutate({ id: item.id, completed: !!checked })
+                  <button
+                    type="button"
+                    onClick={() =>
+                      toggleMutation.mutate({ id: item.id, completed: !item.completed })
                     }
-                  />
-                  <span
-                    className={`flex-1 text-sm ${
-                      item.completed ? "text-muted-foreground line-through" : ""
-                    }`}
+                    className="flex flex-1 items-center gap-3 text-left"
                   >
-                    {item.text}
-                  </span>
+                    <Checkbox checked={item.completed} className="pointer-events-none" />
+                    <span
+                      className={`flex-1 text-sm ${
+                        item.completed ? "text-muted-foreground line-through" : ""
+                      }`}
+                    >
+                      {item.text}
+                    </span>
+                  </button>
+                  <Button
+                    variant={item.completed ? "secondary" : "default"}
+                    size="sm"
+                    onClick={() =>
+                      toggleMutation.mutate({ id: item.id, completed: !item.completed })
+                    }
+                  >
+                    {item.completed ? (
+                      <>
+                        <Check className="mr-1 h-4 w-4" /> Done
+                      </>
+                    ) : (
+                      "Finish"
+                    )}
+                  </Button>
                   <Button
                     variant="ghost"
                     size="icon"
