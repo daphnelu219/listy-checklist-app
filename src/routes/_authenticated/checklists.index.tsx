@@ -60,6 +60,7 @@ function ChecklistsPage() {
 
   return (
     <div className="min-h-screen bg-muted/20">
+      <StickerDecorations />
       <header className="border-b bg-background">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-2">

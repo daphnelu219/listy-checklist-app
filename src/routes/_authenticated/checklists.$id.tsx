@@ -63,6 +63,7 @@ function ChecklistDetailPage() {
 
   return (
     <div className="min-h-screen bg-muted/20">
+      <StickerDecorations />
       <main className="mx-auto max-w-2xl px-4 py-8">
         <Link
           to="/checklists"
