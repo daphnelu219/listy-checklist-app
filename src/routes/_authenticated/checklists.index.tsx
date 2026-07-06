@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckSquare, Plus, Trash2, LogOut } from "lucide-react";
 import { toast } from "sonner";
+import { StickerDecorations } from "@/components/StickerDecorations";
 
 export const Route = createFileRoute("/_authenticated/checklists/")({
   head: () => ({

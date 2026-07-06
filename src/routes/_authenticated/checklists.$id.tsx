@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowLeft, Plus, Trash2, Check } from "lucide-react";
 import { toast } from "sonner";
+import { StickerDecorations } from "@/components/StickerDecorations";
 
 export const Route = createFileRoute("/_authenticated/checklists/$id")({
   head: () => ({
