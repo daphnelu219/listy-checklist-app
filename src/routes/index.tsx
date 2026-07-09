@@ -2,7 +2,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { CheckSquare } from "lucide-react";
-import { CheckSquare } from "lucide-react";
+import heartSticker from "@/assets/sticker-heart-tr.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -11,6 +11,15 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 text-center">
+      <img
+        src={heartSticker}
+        alt=""
+        loading="lazy"
+        width={70}
+        height={70}
+        className="pointer-events-none fixed top-4 right-4 z-50 opacity-90"
+        style={{ transform: "rotate(6deg)" }}
+      />
       <div className="mb-6 flex items-center gap-2">
         <CheckSquare className="h-10 w-10 text-primary" />
         <span className="text-3xl font-bold tracking-tight">Checklists</span>
