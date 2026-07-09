@@ -2,7 +2,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { CheckSquare } from "lucide-react";
-import { CheckSquare } from "lucide-react";
+import heartSticker from "@/assets/sticker-heart-tr.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
